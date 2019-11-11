@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#03A9F4"
+    android:background="@drawable/fond"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
@@ -22,23 +22,23 @@
             android:orientation="vertical">
 
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="App de Himnarios"
-    android:textAlignment="center"
-    android:textSize="30dp"
-    android:textStyle="bold"
-    android:textColor="#070202"
-    android:layout_marginBottom="10dp"
-    />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Himnos Cristianos"
+                android:textAlignment="center"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                android:textColor="#00040A"
+                android:layout_marginBottom="10dp"
+                />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="125dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/himno" />
+            <ImageView
+                android:layout_width="333dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                />
 
 
             <EditText
