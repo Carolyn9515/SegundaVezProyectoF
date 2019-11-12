@@ -3,7 +3,8 @@ package com.example.proyecto_final_tercer_intento;
 public class Productos {
     int codigo;
     String descripcion;
-
+    String autor;
+    String tipo;
     public int getCodigo() {
         return codigo;
     }
@@ -36,8 +37,7 @@ public class Productos {
         this.tipo = tipo;
     }
 
-    String autor;
-    String tipo;
+
 
     public Productos() {
     }
