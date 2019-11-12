@@ -84,7 +84,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estiloedittext"
                 android:paddingLeft="25dp"
-                android:drawableStart="@drawable/ic_descripcion"
+                android:drawableStart="@drawable/ic_autor"
                 android:drawablePadding="5dp"
                 />
 
