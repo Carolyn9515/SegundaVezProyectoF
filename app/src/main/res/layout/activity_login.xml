@@ -20,7 +20,7 @@
             android:layout_height="80dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/mysql" />
+            android:src="@drawable/mysql1" />
 
 
         <RelativeLayout
@@ -138,7 +138,7 @@
                 android:paddingLeft="70dp"
                 android:paddingRight="70dp"
                 android:text="ENTRAR"
-                android:background="@drawable/btn_mov1"
+                android:background="@drawable/estiloboton"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="16sp"
