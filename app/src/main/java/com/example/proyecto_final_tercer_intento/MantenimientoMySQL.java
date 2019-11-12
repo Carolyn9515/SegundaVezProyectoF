@@ -63,7 +63,7 @@ public class MantenimientoMySQL {
     //List<> productosList;
     ProductsAdapter adapter;
 
-    public void guardar(final Context context, final String codigo, final String descripcion, final String precio){
+    public void guardar(final Context context, final String codigo, final String descripcion, final String autor, final String tipo){
         String url = Config.urlGuardar;
         //String url = "localhost/democrudsis21a/guardar.php";
         StringRequest request = new StringRequest(Request.Method.POST, url,
@@ -106,7 +106,8 @@ public class MantenimientoMySQL {
                 map.put("Accept", "application/json");
                 map.put("codigo", codigo);
                 map.put("descripcion", descripcion);
-                map.put("precio", precio);
+                map.put("autor", autor);
+                map.put("tipo", tipo);
                 return map;
             }
         };
@@ -116,7 +117,7 @@ public class MantenimientoMySQL {
     }
 
 
-    public boolean guardar1(final Context context, final String codigo, final String descripcion, final String precio) {
+    public boolean guardar1(final Context context, final String codigo, final String descripcion, final String autor, final String tipo) {
         //String url = "http://mjgl.com.sv/mysqlcrud/guardar.php";
         String url  = Config.urlGuardar;
         StringRequest request = new StringRequest(Request.Method.POST, url,
@@ -163,7 +164,8 @@ public class MantenimientoMySQL {
                 map.put("Accept", "application/json");
                 map.put("codigo", codigo);
                 map.put("descripcion", descripcion);
-                map.put("precio", precio);
+                map.put("autor", autor);
+                map.put("tipo", tipo);
                 return map;
             }
         };
@@ -181,6 +183,7 @@ public class MantenimientoMySQL {
         dialogo = new AlertDialog.Builder(context);
         dialogo.setIcon(R.drawable.ic_delete);
         dialogo.setTitle("¡¡¡Advertencia!!!");
+
         dialogo.setMessage("¿Realmente desea borrar el registro?\n" +
                 "Código: "+codigo);
         dialogo.setCancelable(false);
@@ -289,14 +292,17 @@ public class MantenimientoMySQL {
                                 JSONArray jsonArray = new JSONArray(response);
                                 String codigo = jsonArray.getJSONObject(0).getString("codigo");
                                 String descripcion = jsonArray.getJSONObject(0).getString("descripcion");
-                                String precio = jsonArray.getJSONObject(0).getString("precio");
+                                String autor = jsonArray.getJSONObject(0).getString("autor");
+                                String tipo = jsonArray.getJSONObject(0).getString("tipo");
+
 
 
                                 Intent intent = new Intent(context, MainActivity.class);
                                 intent.putExtra("senal", "1");
                                 intent.putExtra("codigo", codigo.toString());
                                 intent.putExtra("descripcion", descripcion);
-                                intent.putExtra("precio", precio);
+                                intent.putExtra("autor", autor);
+                                intent.putExtra("tipo", tipo);
                                 context.startActivity(intent);
 
 
@@ -358,17 +364,21 @@ public class MantenimientoMySQL {
                                 JSONArray jsonArray = new JSONArray(response);
                                 String codigo = jsonArray.getJSONObject(0).getString("codigo");
                                 String descripcion = jsonArray.getJSONObject(0).getString("descripcion");
-                                String precio = jsonArray.getJSONObject(0).getString("precio");
+                                String autor = jsonArray.getJSONObject(0).getString("autor");
+                                String tipo = jsonArray.getJSONObject(0).getString("tipo");
 
                                datos.setCodigo(Integer.parseInt(codigo));
                                datos.setDescripcion(descripcion);
-                               datos.setPrecio(Double.parseDouble(precio));
+                               datos.setAutor(autor);
+                               datos.setTipo(tipo);
 
                                 Intent intent = new Intent(context, MainActivity.class);
                                 intent.putExtra("senal", "1");
                                 intent.putExtra("codigo", codigo.toString());
                                 intent.putExtra("descripcion", descripcion);
-                                intent.putExtra("precio", precio);
+                                intent.putExtra("autor", autor);
+                                intent.putExtra("tipo", tipo);
+
                                 //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                 context.startActivity(intent);
 
@@ -431,9 +441,10 @@ public class MantenimientoMySQL {
 
                                 int codigo = articulosObject.getInt("codigo");
                                 String descripcion = articulosObject.getString("descripcion");
-                                double precio = articulosObject.getDouble("precio");
-                                String img = articulosObject.getString("imagen");
-                                Productos objeto = new Productos(codigo, descripcion, precio, img);
+                                String autor = articulosObject.getString("autor");
+                                String tipo = articulosObject.getString("tipo");
+                                //String img = articulosObject.getString("imagen");
+                                Productos objeto = new Productos(codigo, descripcion, autor, tipo);
                                 productosList.add(objeto);
 
                                 /*
@@ -526,7 +537,8 @@ public class MantenimientoMySQL {
                 map.put("Accept", "application/json");
                 map.put("codigo", String.valueOf(datos.getCodigo()));
                 map.put("descripcion", datos.getDescripcion());
-                map.put("precio", String.valueOf(datos.getPrecio()));
+                map.put("autor", datos.getAutor());
+                map.put("tipo", datos.getTipo());
                 /*
                 map.put("codigo", codigo);
                 map.put("descripcion", descripcion);
@@ -545,12 +557,13 @@ public class MantenimientoMySQL {
         String info;
         info = "Codigo = "+datos.getCodigo() + "\n" ;
         info += "Descripción = "+datos.getDescripcion() + "\n";
-        info += "Precio = "+datos.getPrecio() + "\n";
+        info += "Autor = "+datos.getAutor() + "\n";
+        info += "Tipo = "+datos.getTipo() + "\n";
         return info;
     }
 
 
-    public void createfile(Context context, String codigo, String descripcion, String precio){
+    public void createfile(Context context, String codigo, String descripcion, String autor, String tipo){
         SharedPreferences preferences = context.getSharedPreferences("profeGamez", MODE_PRIVATE);
         //OBTENIENDO LA FECHA Y HORA ACTUAL DEL SISTEMA.
         DateFormat formatodate= new SimpleDateFormat("yyyy/MM/dd");
@@ -562,7 +575,8 @@ public class MantenimientoMySQL {
         editor.putString("hora", time);
         editor.putString("codigo", codigo);
         editor.putString("descripcion", descripcion);
-        editor.putString("precio", precio);
+        editor.putString("autor", autor);
+        editor.putString("tipo", tipo);
         editor.commit();
     }
 

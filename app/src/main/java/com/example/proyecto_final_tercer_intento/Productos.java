@@ -3,18 +3,6 @@ package com.example.proyecto_final_tercer_intento;
 public class Productos {
     int codigo;
     String descripcion;
-    double precio;
-    String imagen;
-
-    public Productos() {
-    }
-
-    public Productos(int codigo, String descripcion, double precio, String imagen) {
-        this.codigo = codigo;
-        this.descripcion = descripcion;
-        this.precio = precio;
-        this.imagen = imagen;
-    }
 
     public int getCodigo() {
         return codigo;
@@ -32,19 +20,33 @@ public class Productos {
         this.descripcion = descripcion;
     }
 
-    public double getPrecio() {
-        return precio;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
-    public String getImagen() {
-        return imagen;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
+
+    String autor;
+    String tipo;
+
+    public Productos() {
+    }
+//CAROLINA ESTO LO DEJASTE EMPEZADO, TENES QUE CAMBIAR LAS VARIABLES REVISA BIEN!!!!
+    public Productos(int codigo, String descripcion, String autor, String tipo) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.autor = autor;
+        this.tipo = tipo;
+    }
+
 }

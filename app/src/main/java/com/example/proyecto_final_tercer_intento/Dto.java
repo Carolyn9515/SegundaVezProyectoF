@@ -7,18 +7,8 @@ import java.io.Serializable;
 public class Dto implements Serializable {
     int codigo;
     String descripcion;
-    double precio;
-
-
-    public Dto() {
-    }
-
-
-    public Dto(int codigo, String descripcion, double precio) {
-        this.codigo = codigo;
-        this.descripcion = descripcion;
-        this.precio = precio;
-    }
+    String autor;
+    String tipo;
 
     public int getCodigo() {
         return codigo;
@@ -36,11 +26,31 @@ public class Dto implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public double getPrecio() {
-        return precio;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+
+    public Dto() {
+
+    }
+
+    public Dto(int codigo, String descripcion, String autor, String tipo) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.autor = autor;
+        this.tipo = tipo;
     }
 }

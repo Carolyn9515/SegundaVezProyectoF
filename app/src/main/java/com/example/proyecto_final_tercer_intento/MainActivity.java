@@ -18,6 +18,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+//import com.example.proyecto_final_tercer_intento.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
     String senal = "";
     String codigo = "";
     String descripcion = "";
-    String precio = "";
+    String autor = "";
+    String tipo = "";
 
     MantenimientoMySQL manto = new MantenimientoMySQL();
     Dto datos = new Dto();
@@ -112,7 +114,8 @@ public class MainActivity extends AppCompatActivity {
                 senal = bundle.getString("senal");
                 codigo = bundle.getString("codigo");
                 descripcion = bundle.getString("descripcion");
-                precio = bundle.getString("precio");
+                autor = bundle.getString("autor");
+                tipo = bundle.getString("tipo");
                 if (senal.equals("1")) {
                     et_codigo.setText(codigo);
                     et_descripcion.setText(descripcion);
