@@ -75,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+       /* Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
         toolbar.setTitleTextColor(getResources().getColor(R.color.mycolor1));
         toolbar.setTitleMargin(0, 0, 0, 0);
         toolbar.setSubtitle("Proyecto Final");
         toolbar.setSubtitleTextColor(getResources().getColor(R.color.mycolore));
         toolbar.setTitle("Himnario");
-        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);*/
 
         ///y esto para pantalla completa (oculta incluso la barra de estado)
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         et_codigo = (EditText) findViewById(R.id.et_codigo);
         et_descripcion = (EditText) findViewById(R.id.et_descripcion);
         et_autor = (EditText) findViewById(R.id.et_autor);
-        et_tipo = (EditText)findViewById(R.id.et_tipo);
+        et_tipo = (EditText) findViewById(R.id.et_tipo);
         btn_guardar = (Button) findViewById(R.id.btn_guardar);
         btn_consultaCodigo = (Button) findViewById(R.id.btn_consultaCodigo);
         btn_consultaDescripcion = (Button) findViewById(R.id.btn_consultaDescripcion);
@@ -99,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
         //tv_resultado = (TextView) findViewById(R.id.tv_resultado);
 
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+       /* toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogConfirmacion();
             }
-        });
+        });*/
 
 
         /******************************************************************/

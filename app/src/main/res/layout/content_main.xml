@@ -88,19 +88,22 @@
                 android:drawablePadding="5dp"
                 />
 
-
-            <TextView
+            <EditText
                 android:id="@+id/et_tipo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Himno, alabanza, coro"
+                android:hint="Tipo"
                 android:layout_marginRight="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estiloedittext"
                 android:paddingLeft="25dp"
-                android:drawableStart="@drawable/ic_music"
-                android:drawablePadding="5dp"/>
+                android:drawableStart="@drawable/ic_autor"
+                android:drawablePadding="5dp"
+                />
+
+
+
 
 
 
