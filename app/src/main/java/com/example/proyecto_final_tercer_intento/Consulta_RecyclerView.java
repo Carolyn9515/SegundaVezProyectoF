@@ -132,8 +132,8 @@ public class Consulta_RecyclerView extends AppCompatActivity {
                                 productosList.add(new Productos(
                                         articulosObject.getInt("codigo"),
                                         articulosObject.getString("descripcion"),
-                                        articulosObject.getDouble("precio"),
-                                        articulosObject.getString("imagen")
+                                        articulosObject.getString("autor"),
+                                        articulosObject.getString("tipo")
                                 ));
                             }
 
