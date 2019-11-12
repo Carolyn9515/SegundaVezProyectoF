@@ -1,5 +1,3 @@
-package com.example.proyecto_final_tercer_intento;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;

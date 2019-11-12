@@ -1,5 +1,3 @@
-package com.example.proyecto_final_tercer_intento;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
