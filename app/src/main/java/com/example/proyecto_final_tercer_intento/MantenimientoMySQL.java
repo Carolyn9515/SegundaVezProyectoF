@@ -64,8 +64,8 @@ public class MantenimientoMySQL {
     ProductsAdapter adapter;
 
     public void guardar(final Context context, final String codigo, final String descripcion, final String autor, final String tipo){
-        String url = Config.urlGuardar;
-        //String url = "localhost/democrudsis21a/guardar.php";
+        //String url = Config.urlGuardar;
+        String url = "http://localhost/conexion/guardar.php";
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
@@ -118,7 +118,7 @@ public class MantenimientoMySQL {
 
 
     public boolean guardar1(final Context context, final String codigo, final String descripcion, final String autor, final String tipo) {
-        //String url = "http://mjgl.com.sv/mysqlcrud/guardar.php";
+        // String url = "http://mjgl.com.sv/mysqlcrud/guardar.php";
         String url  = Config.urlGuardar;
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

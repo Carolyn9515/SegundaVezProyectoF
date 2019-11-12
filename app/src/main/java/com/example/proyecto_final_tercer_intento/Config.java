@@ -18,7 +18,7 @@ public class Config {
  */
     //URL PARA ACCESO A BASE DE DATOS LOCAL MYSQL.
     //public static final String urlGuardar = "http://localhost/conexion/guardar.php";                               //Guardar datos DB.
-    public static final String urlGuardar = "http://localhost/conexion/guardar.php";                               //Guardar datos DB.
+    public static final String urlGuardar = "http://192.168.137.1/conexion/guardar.php";                               //Guardar datos DB.
 
     public static final String urlEliminar = "http://localhost/conexion/eliminar.php";                             //Eliminar datos DB.
     public static final String urlActualizar = "http://localhost/conexion/actualizar.php";                          //Actualizar datos DB.
