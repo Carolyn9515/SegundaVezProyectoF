@@ -38,6 +38,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:src="@drawable/himno"
                 />
 
 
@@ -54,7 +55,7 @@
                 android:drawablePadding="5dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="50dp"
                 />
 
             <EditText
@@ -71,15 +72,16 @@
                 android:drawablePadding="5dp"
                 />
 
+
+
             <EditText
                 android:id="@+id/et_autor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ingrese el nombre del autor"
+                android:hint="Nombre del autor"
                 android:layout_marginRight="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="20dp"
-                android:inputType="numberDecimal"
                 android:background="@drawable/estiloedittext"
                 android:paddingLeft="25dp"
                 android:drawableStart="@drawable/ic_descripcion"
@@ -90,17 +92,15 @@
                 android:id="@+id/et_tipo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Alabanza, Himno, Coro"
+                android:hint="Himno, alabanza, coro"
                 android:layout_marginRight="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="20dp"
-                android:inputType="numberDecimal"
                 android:background="@drawable/estiloedittext"
                 android:paddingLeft="25dp"
                 android:drawableStart="@drawable/ic_descripcion"
                 android:drawablePadding="5dp"
                 />
-
 
             <Button
                 android:id="@+id/btn_guardar"

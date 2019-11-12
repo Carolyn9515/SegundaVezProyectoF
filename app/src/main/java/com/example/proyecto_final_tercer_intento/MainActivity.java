@@ -79,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
         toolbar.setTitleTextColor(getResources().getColor(R.color.mycolor1));
         toolbar.setTitleMargin(0, 0, 0, 0);
-        toolbar.setSubtitle("CRUD MySQL~2019");
-        toolbar.setSubtitleTextColor(getResources().getColor(R.color.mycolor));
-        toolbar.setTitle("Practica Git");
+        toolbar.setSubtitle("Proyecto Final");
+        toolbar.setSubtitleTextColor(getResources().getColor(R.color.mycolore));
+        toolbar.setTitle("Himnario");
         setSupportActionBar(toolbar);
 
         ///y esto para pantalla completa (oculta incluso la barra de estado)

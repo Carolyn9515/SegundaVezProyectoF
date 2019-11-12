@@ -40,27 +40,29 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
 
         //loading the image
 
-        String im = product.getImagen();
+        //String im = product.getImagen();
         //Toast.makeText(mCtx, ""+im, Toast.LENGTH_SHORT).show();
+        //String im = product.getCodigo();
 
-
-        if(im.isEmpty()) {
+       // if(im.isEmpty()) {
             holder.imageView.setImageResource(R.drawable.imgnoencontrada);
             holder.textViewCodigo1.setText(String.valueOf(product.getCodigo()));
             holder.textViewDescripcion1.setText(product.getDescripcion());
-            holder.textViewPrecio1.setText(String.valueOf(product.getPrecio()));
+            holder.textViewAutor1.setText(product.getAutor());
+            holder.textViewTipo1.setText(product.getTipo());
 
-        }else{
-            Glide.with(mCtx)
-                    .load(product.getImagen())
-                    .into(holder.imageView);
+     //   }else{
+           // Glide.with(mCtx)
+             //       .load(product.getImagen())
+               //     .into(holder.imageView);
 
             holder.textViewCodigo1.setText(String.valueOf(product.getCodigo()));
             holder.textViewDescripcion1.setText(product.getDescripcion());
-            holder.textViewPrecio1.setText(String.valueOf(product.getPrecio()));
+            holder.textViewAutor1.setText(product.getAutor());
+            holder.textViewTipo1.setText(product.getTipo());
         }
 
-    }
+    //}
 
     @Override
     public int getItemCount() {
@@ -69,7 +71,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewCodigo1, textViewDescripcion1, textViewPrecio1;
+        TextView textViewCodigo1, textViewDescripcion1, textViewAutor1, textViewTipo1;
         ImageView imageView;
 
         public ProductViewHolder(View itemView) {
@@ -77,8 +79,8 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
 
             textViewCodigo1 = itemView.findViewById(R.id.textViewCodigo1);
             textViewDescripcion1 = itemView.findViewById(R.id.textViewDescripcion1);
-            textViewPrecio1= itemView.findViewById(R.id.textViewPrecio1);
-            imageView = itemView.findViewById(R.id.imageView);
+            textViewAutor1= itemView.findViewById(R.id.textViewAutor1);
+            textViewTipo1 = itemView.findViewById(R.id.textViewTipo1);
         }
     }
 
