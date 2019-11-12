@@ -19,12 +19,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 //import com.example.proyecto_final_tercer_intento.R;
+import com.example.sqlite.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText et_codigo, et_descripcion, et_precio;
+    private EditText et_codigo, et_descripcion, et_autor, et_tipo;
     private Button btn_guardar, btn_consultaCodigo, btn_consultaDescripcion, btn_eliminar, btn_actualizar;
 
     boolean inputEt=false;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     boolean estadoEliminar = false;
 
     AlertDialog.Builder dialogo;
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -87,7 +89,8 @@ public class MainActivity extends AppCompatActivity {
 
         et_codigo = (EditText) findViewById(R.id.et_codigo);
         et_descripcion = (EditText) findViewById(R.id.et_descripcion);
-        et_precio = (EditText) findViewById(R.id.et_precio);
+        et_autor = (EditText) findViewById(R.id.et_autor);
+        et_tipo = (EditText)findViewById(R.id.et_tipo);
         btn_guardar = (Button) findViewById(R.id.btn_guardar);
         btn_consultaCodigo = (Button) findViewById(R.id.btn_consultaCodigo);
         btn_consultaDescripcion = (Button) findViewById(R.id.btn_consultaDescripcion);
@@ -105,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         /******************************************************************/
-             //BLOQUE DE CÓDIGO PARA MOSTRAR DATOS DE LA BUSQUEDA//
+        //BLOQUE DE CÓDIGO PARA MOSTRAR DATOS DE LA BUSQUEDA//
         try {
             Intent intent = getIntent();
             Bundle bundle = intent.getExtras();
@@ -119,7 +122,8 @@ public class MainActivity extends AppCompatActivity {
                 if (senal.equals("1")) {
                     et_codigo.setText(codigo);
                     et_descripcion.setText(descripcion);
-                    et_precio.setText(precio);
+                    et_autor.setText(autor);
+                    et_tipo.setText(tipo);
                     //finish();
                 }else if(senal.equals("2")){
 
@@ -148,8 +152,8 @@ public class MainActivity extends AppCompatActivity {
                 }else {
                     inputEd=true;
                 }
-                if(et_precio.getText().toString().length()==0){
-                    et_precio.setError("Campo obligatorio");
+                if(et_autor.getText().toString().length()==0){
+                    et_autor.setError("Campo obligatorio");
                     input1 = false;
                 }else {
                     input1=true;
@@ -158,8 +162,9 @@ public class MainActivity extends AppCompatActivity {
                 if (inputEt && inputEd && input1){
                     String codigo = et_codigo.getText().toString();
                     String descripcion = et_descripcion.getText().toString();
-                    String precio = et_precio.getText().toString();
-                    manto.guardar(MainActivity.this, codigo, descripcion, precio);
+                    String autor = et_autor.getText().toString();
+                    String tipo = et_tipo.getText().toString();
+                    manto.guardar(MainActivity.this, codigo, descripcion, autor, tipo);
 
                     limpiarDatos();
                     et_codigo.requestFocus();
@@ -274,11 +279,13 @@ public class MainActivity extends AppCompatActivity {
 
                     String cod = et_codigo.getText().toString();
                     String descripcion = et_descripcion.getText().toString();
-                    String precio = et_precio.getText().toString();
+                    String autor = et_autor.getText().toString();
+                    String tipo = et_tipo.getText().toString();
 
                     datos.setCodigo(Integer.parseInt(cod));
                     datos.setDescripcion(descripcion);
-                    datos.setPrecio(Double.parseDouble(precio));
+                    datos.setAutor(autor);
+                    datos.setTipo(tipo);
                     manto.modificar(MainActivity.this, datos);
                     limpiarDatos();
                     et_codigo.requestFocus();
@@ -303,7 +310,8 @@ public class MainActivity extends AppCompatActivity {
     public void limpiarDatos(){
         et_codigo.setText(null);
         et_descripcion.setText(null);
-        et_precio.setText(null);
+        et_autor.setText(null);
+        et_tipo.setText(null);
     }
 
 
@@ -327,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_limpiar) {
             et_codigo.setText(null);
             et_descripcion.setText(null);
-            et_precio.setText(null);
+            et_autor.setText(null);
             return true;
         }else if(id == R.id.action_listaArticulos){
             Intent spinnerActivity = new Intent(MainActivity.this, Consulta_RecyclerView.class);
@@ -335,10 +343,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }else if(id == R.id.action_salir){
             DialogConfirmacion();
-            return true;
-        }else if (id == R.id.acercade) {
-            Intent Acercade = new Intent(MainActivity.this, AcercaDe.class);
-            startActivity(Acercade);
             return true;
         }
 
@@ -391,11 +395,13 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         String cod = getSharedCodigo(MainActivity.this);
                         String des = getSharedDescripcion(MainActivity.this);
-                        String pre = getSharedPrecio(MainActivity.this);
+                        String aut = getSharedAutor(MainActivity.this);
+                        String tip = getSharedTipo(MainActivity.this);
 
                         et_codigo.setText(cod);
                         et_descripcion.setText(des);
-                        et_precio.setText(pre);
+                        et_autor.setText(aut);
+                        et_tipo.setText(tip);
 
                         //Toast.makeText(MainActivity.this, "Código: "+cod + "\nPrecio: "+pre + "\nDescripción: "+des, Toast.LENGTH_SHORT).show();
                     }
@@ -424,10 +430,16 @@ public class MainActivity extends AppCompatActivity {
         return descripcion;   //return preferences.getString("tiempo", "Sin configurar.");
     }
 
-    public String getSharedPrecio(Context context) {
+    public String getSharedAutor(Context context) {
         SharedPreferences preferences = context.getSharedPreferences("profeGamez", MODE_PRIVATE);
-        String precio = preferences.getString("precio","0.0");
-        return precio;   //return preferences.getString("tiempo", "Sin configurar.");
+        String autor = preferences.getString("autor","Autor");
+        return autor;   //return preferences.getString("tiempo", "Sin configurar.");
+    }
+
+    public String getSharedTipo(Context context) {
+        SharedPreferences preferences = context.getSharedPreferences("profeGamez", MODE_PRIVATE);
+        String tipo = preferences.getString("tipo","tipo");
+        return tipo;   //return preferences.getString("tiempo", "Sin configurar.");
     }
 
 

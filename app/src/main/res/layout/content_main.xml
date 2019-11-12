@@ -61,7 +61,7 @@
                 android:id="@+id/et_descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ingrese la descripción del artículo"
+                android:hint="Ingrese el contenido"
                 android:layout_marginRight="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="20dp"
@@ -72,17 +72,32 @@
                 />
 
             <EditText
-                android:id="@+id/et_precio"
+                android:id="@+id/et_autor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ingrese el precio del artículo"
+                android:hint="Ingrese el nombre del autor"
                 android:layout_marginRight="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="20dp"
                 android:inputType="numberDecimal"
                 android:background="@drawable/estiloedittext"
                 android:paddingLeft="25dp"
-                android:drawableStart="@drawable/ic_precio"
+                android:drawableStart="@drawable/ic_descripcion"
+                android:drawablePadding="5dp"
+                />
+
+            <EditText
+                android:id="@+id/et_tipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Alabanza, Himno, Coro"
+                android:layout_marginRight="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:inputType="numberDecimal"
+                android:background="@drawable/estiloedittext"
+                android:paddingLeft="25dp"
+                android:drawableStart="@drawable/ic_descripcion"
                 android:drawablePadding="5dp"
                 />
 
