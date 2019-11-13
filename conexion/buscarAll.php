@@ -16,7 +16,7 @@
                 $temp['codigo'];
                 $temp['descripcion'];
                 $temp['autor'];
-		$temp['tipo'];
+		        $temp['tipo'];
                 
                 array_push($articulos, $temp);
 		

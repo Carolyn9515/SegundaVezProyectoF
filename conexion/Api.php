@@ -3,15 +3,15 @@
 	
 	//database constants
 	define('DB_HOST', 'localhost');
-	define('DB_USER', 'mjgl_demosis21a');
-	define('DB_PASS', 'megatec2019_');
-	define('DB_NAME', 'mjgl_democrudsis21a');
+	define('DB_USER', 'root');
+	define('DB_PASS', '');
+	define('DB_NAME', 'proyecto_final');
 	
 	//connecting to database and getting the connection object
 	$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	
 	//Checking if any error occured while connecting
-	if (mysqli_connect_errno()) {
+	if (mysqli_connect_error()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		die();
 	}
@@ -20,13 +20,13 @@
 	//$conn=conexion();  
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT codigo, descripcion, precio, imagen FROM tb_articulos;");
+	$stmt = $conn->prepare("SELECT codigo, descripcion, autor, tipo FROM tb_himnos;");
 	
 	//executing the query 
 	$stmt->execute();
 	
 	//binding results to the query 
-	$stmt->bind_result($codigo, $descripcion, $precio, $imagen);
+	$stmt->bind_result($codigo, $descripcion, $autor, $tipo);
 	
 	$products = array(); 
 	
@@ -35,8 +35,8 @@
 		$temp = array();
 		$temp['codigo'] = $codigo; 
 		$temp['descripcion'] = $descripcion; 
-		$temp['precio'] = $precio; 
-		$temp['imagen'] = $imagen;
+		$temp['autor'] = $autor; 
+		$temp['tipo'] = $tipo;
 		array_push($products, $temp);
 		
 			$datos[] = array_map("utf8_encode", $temp);
