@@ -45,8 +45,5 @@ public class ConsultaAutor extends AppCompatActivity {
     }
 
 
-    private void mostrar() {
-        Intent i  = new Intent(this, ConsultaAutor.class);
-        startActivity(i);
-    }
+
 }
