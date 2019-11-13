@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConsultaAutor">
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif-monospace"
+        android:text="Consulta de Autores"
+        android:textAlignment="center"
+        android:textColor="#1A1717"
+        android:textSize="26dp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/et_Autor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el nombre del autor"
+        android:background="@drawable/estiloedittext"
+        android:shadowRadius="5"
+        android:paddingLeft="25dp"
+        android:drawableStart="@drawable/ic_hola"
+        android:drawablePadding="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        />
+
+
+
+    <Button
+        android:id="@+id/btn_autor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:text="Buscar Autor"
+        android:textColor="#0A0A0A"
+        android:background="@drawable/estiloboton"
+        android:shadowColor="#2314A8"
+        android:shadowDx="-3"
+        android:shadowDy="0"
+        android:shadowRadius="8"
+        android:drawablePadding="-140dp"
+        />
+
+
+</LinearLayout>
