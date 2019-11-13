@@ -75,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       /* Toolbar toolbar = findViewById(R.id.toolbar);
+       Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
         toolbar.setTitleTextColor(getResources().getColor(R.color.mycolor1));
         toolbar.setTitleMargin(0, 0, 0, 0);
         toolbar.setSubtitle("Proyecto Final");
         toolbar.setSubtitleTextColor(getResources().getColor(R.color.mycolore));
         toolbar.setTitle("Himnario");
-        setSupportActionBar(toolbar);*/
+        setSupportActionBar(toolbar);
 
         ///y esto para pantalla completa (oculta incluso la barra de estado)
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -99,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
         //tv_resultado = (TextView) findViewById(R.id.tv_resultado);
 
 
-       /* toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogConfirmacion();
             }
-        });*/
+        });
 
 
         /******************************************************************/
