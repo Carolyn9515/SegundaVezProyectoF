@@ -1,12 +1,13 @@
 <?php
 include('main_class.php');
 
-if (isset($_POST["codigo"]) && ($_POST["descripcion"]) && ($_POST["precio"])){
+if (isset($_POST["codigo"]) && ($_POST["descripcion"]) && ($_POST["tipo"])  && ($_POST["tipo"])){
  	$codigo = $_POST['codigo'];
  	$descripcion = $_POST['descripcion'];
- 	$precio = $_POST['precio'];
+ 	$autor = $_POST['autor'];
+	$tipo = $_POST['tipo'];
 
-	$resultado = Mantenimiento::actualizar_Articulos($codigo, $descripcion, $precio);
+	$resultado = Mantenimiento::actualizar_Articulos($codigo, $descripcion, $autor, $tipo);
 	
 	if ($resultado==1) {
         header('Content-type: application/json; charset=utf-8');

@@ -339,7 +339,8 @@ public class MantenimientoMySQL {
 
         progressDialog = new ProgressDialog(context);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Espere por favor, Estamos trabajando en su petición en el servidor");
+        progressDialog.setMessage("Estamos trabajando en su petición");
+       // progressDialog.setMessage("Espere por favor, Estamos trabajando en su petición en el servidor");
         progressDialog.show();
 
         String url  = Config.urlConsultaDescripcion;
