@@ -2,7 +2,7 @@
     <string name="app_name">Proyecto</string>
     <string name="title_activity_main2">App Final</string>
 
-    <string name="action_settings">Nuevo Registro</string>
+    <string name="action_limpiar">Limpiar </string>
     <string name="listarticulos">Lista de Contenido</string>
     <string name="listarticulos1">Lista ListView</string>
 
