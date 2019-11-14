@@ -30,16 +30,9 @@
                 android:textSize="35dp"
                 android:textStyle="bold"
                 android:textColor="#00040A"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="100dp"
                 />
 
-            <ImageView
-                android:layout_width="333dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/himno"
-                />
 
 
             <EditText
@@ -98,7 +91,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estiloedittext"
                 android:paddingLeft="25dp"
-                android:drawableStart="@drawable/ic_autor"
+                android:drawableStart="@drawable/ic_miu"
                 android:drawablePadding="5dp"
                 />
 
