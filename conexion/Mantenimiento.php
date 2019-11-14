@@ -1,16 +1,19 @@
 <?php 
 include('main_class.php');
 //require 'main_class.php';
+
 $codigo = $_POST['codigo'];
 $descripcion = htmlspecialchars($_POST["descripcion"],ENT_QUOTES);
-$precio = htmlspecialchars($_POST["precio"],ENT_QUOTES);
+$autor = htmlspecialchars($_POST["autor"],ENT_QUOTES);
+$tipo = htmlspecialchars($_POST["tipo"],ENT_QUOTES);
 
 if (($codigo!="") and 
 ($descripcion!="")  and
-($precio!="")) {
+($autor!="") and
+($tipo!="")) {
 
 
-    $resultado = Mantenimiento::guardar_Articulos($codigo, $descripcion, $precio);
+    $resultado = Mantenimiento::guardar_Articulos($codigo, $descripcion, $autor, $tipo);
 
     if ($resultado==1) {
         header('content-type: application/json; charset=utf-8');

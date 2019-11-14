@@ -20,15 +20,15 @@ public class Config {
     //public static final String urlGuardar = "http://localhost/conexion/guardar.php";                               //Guardar datos DB.
     public static final String urlGuardar = "http://192.168.43.234/conexion/guardar.php";                               //Guardar datos DB.
 
-    public static final String urlEliminar = "http://192.168.137.1/conexion/eliminar.php";                             //Eliminar datos DB.
-    public static final String urlActualizar = "http://192.168.137.1/conexion/actualizar.php";                          //Actualizar datos DB.
+    public static final String urlEliminar = "http://192.168.43.234/conexion/eliminar.php";                             //Eliminar datos DB.
+    public static final String urlActualizar = "http://192.168.43.234/conexion/actualizar.php";                          //Actualizar datos DB.
 
-    public static final String urlConsultaApiMySQLi = "http://192.168.137.1/conexion/Api.php";                          //Ver todos los registros DB.
-    public static final String urlConsultaApiPDO = "http://192.168.137.1/conexion/buscarAll.php";                       //Ver todos los registros DB.
+    public static final String urlConsultaApiMySQLi = "http://192.168.43.234/conexion/Api.php";                          //Ver todos los registros DB.
+    public static final String urlConsultaApiPDO = "http://192.168.43.234/conexion/buscarAll.php";                       //Ver todos los registros DB.
 
-    public static final String urlConsultaCodigo = "http://192.168.137.1/conexion/buscarArticulosCodigo.php";            //Busquedas por código.
-    public static final String urlConsultaDescripcion = "http://192.168.137.1/conexion/buscarArticulosDescripcion.php";  //Busquedas por descripción.
-    public static final String urlConsultaAllArticulos = "http://192.168.137.1/conexion/buscarArticulos.php";            //Devuelve todos los registros de la tabla MySQL.
-    public static final String urlbuscarhimnario = "http://localhost/conexion/buscarhimnario.php";
+    public static final String urlConsultaCodigo = "http://192.168.43.234/conexion/buscarArticulosCodigo.php";            //Busquedas por código.
+    public static final String urlConsultaDescripcion = "http://192.168.43.234/conexion/buscarArticulosDescripcion.php";  //Busquedas por descripción.
+    public static final String urlConsultaAllArticulos = "http://192.168.43.234/conexion/buscarArticulos.php";            //Devuelve todos los registros de la tabla MySQL.
+    public static final String urlbuscarhimnario = "http://192.168.43.234/conexion/buscarhimnario.php";
 
 }

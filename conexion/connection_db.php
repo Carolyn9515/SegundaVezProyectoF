@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 function conexion(){
 	$conn = null;
 	$host = 'localhost';

@@ -5,7 +5,7 @@ class Mantenimiento{
     public static function guardar_Articulos($codigo, $descripcion, $autor, $tipo){
         include("connection_db.php");
         $query = "INSERT INTO  tb_himnos (codigo, descripcion, autor, tipo)
-                                VALUES (?, ?, ?)";
+                                VALUES (?, ?, ?, ?)";
         try{    
           $link=conexion();    
           $comando = $link->prepare($query);
@@ -56,7 +56,7 @@ class Mantenimiento{
         try {    
           $link=conexion();    
           $comando = $link->prepare($query);
-          $comando->execute(array($descripcion, $precio, $codigo));
+          $comando->execute(array($descripcion, $autor, $tipo, $codigo));
           //return $comando;
           $count = $comando->rowCount(); 
           if($count>0){
@@ -77,7 +77,7 @@ class Mantenimiento{
     
     public static function getArticulosCodigo($codigo) {
         include("connection_db1.php");
-        $query = "SELECT codigo,descripcion,precio from tb_articulos where codigo = ?";
+        $query = "SELECT codigo,descripcion,autor,tipo from tb_himnos where codigo = ?";
     try {    
           $link=conexion();    
           $comando = $link->prepare($query);
@@ -95,7 +95,7 @@ class Mantenimiento{
   
   public static function getArticulosDescripcion($desc) {
         include("connection_db1.php");
-        $query = "SELECT codigo,descripcion,precio from tb_articulos where descripcion = ?";
+        $query = "SELECT codigo,descripcion,autor,tipo from tb_himnos where descripcion LIKE = "A*" ?";
     try {    
           $link=conexion();    
           $comando = $link->prepare($query);
@@ -115,7 +115,7 @@ class Mantenimiento{
    public static function getAllArticulos() {
         include("connection_db1.php");
         
-        $query = "SELECT codigo,descripcion,precio FROM tb_articulos";
+        $query = "SELECT codigo,descripcion,autor,tipo FROM tb_himnos";
 
         try {
             $link=conexion();    
@@ -131,12 +131,14 @@ class Mantenimiento{
                     //$temp['descripcion'] = $result['descripcion'];
                     //$temp['precio'] = $result['precio'];
                                             
-                     $array [] = array('codigo' => $result['codigo'], 'descripcion' => $result['descripcion'], 'precio' => $result['precio']);
+                     $array [] = array('codigo' => $result['codigo'], 'descripcion' => $result['descripcion'], 'autor' => $result['autor'], 'tipo' => $result['tipo']);
                     
                     /*
                     $rows_array['codigo'] = $result['codigo'];
                     $rows_array['descripcion'] = $result['descripcion'];
-                    $rows_array['precio'] = $result['precio'];
+                    $rows_array['autor'] = $result['autor'];
+		    $rows_array['tipo'] = $result['tipo'];
+
                     */
                 }
                 

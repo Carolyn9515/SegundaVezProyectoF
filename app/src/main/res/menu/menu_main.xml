@@ -15,19 +15,11 @@
         android:title="@string/listarticulos1"
         app:showAsAction="always" />
 
-    <item
-        android:id="@+id/action_salir"
-        android:icon="@drawable/ic_close"
-        android:orderInCategory="3"
-        android:title="@string/salir"
-        app:showAsAction="never" />
 
 
-    <item
-        android:id="@+id/acercade"
-        android:orderInCategory="100"
-        android:title="Acerca de"
-        app:showAsAction="never" />
+
+
+
 
     <!--<item
         android:id="@+id/action_listaArticulos1"
