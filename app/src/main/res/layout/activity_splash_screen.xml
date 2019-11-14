@@ -40,79 +40,12 @@
         android:textColor="#0A0808"
         android:textSize="15sp" />
 
-    <TextView
-        android:layout_width="421dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="100dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Scrum Master:"
-        android:textAlignment="center"
-        android:textColor="#DA2F2F"
-        android:textSize="15sp" />
-
-
-    <TextView
-        android:layout_width="421dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="100dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Griselda Carolina López Hernández"
-        android:textAlignment="center"
-        android:textColor="#0A0808"
-        android:textSize="15sp" />
-
-
-
-    <TextView
-        android:layout_width="421dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="100dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Scrum Team:"
-        android:textAlignment="center"
-        android:textColor="#DA2F2F"
-        android:textSize="15sp" />
-
-
-    <TextView
-        android:layout_width="421dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="100dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Yennifer Estefany Granadeño Flores"
-        android:textAlignment="center"
-        android:textColor="#0A0808"
-        android:textSize="15sp" />
-    <TextView
-        android:layout_width="421dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="100dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Luis Alberto Pineda Reyes"
-        android:textAlignment="center"
-        android:textColor="#0A0808"
-        android:textSize="15sp" />
-    <TextView
-        android:layout_width="421dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="100dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Rudy Alexander Reyes Lovato"
-        android:textAlignment="center"
-        android:textColor="#0A0808"
-        android:textSize="15sp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/music" />
+        android:layout_height="474dp"
+        app:srcCompat="@drawable/splash" />
 
 
 </LinearLayout>
