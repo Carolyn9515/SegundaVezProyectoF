@@ -2,14 +2,14 @@
   //require_once("connection_db.php");
 class Mantenimiento{
     
-    public static function guardar_Articulos($codigo, $descripcion, $precio){
+    public static function guardar_Articulos($codigo, $descripcion, $autor, $tipo){
         include("connection_db.php");
-        $query = "INSERT INTO  tb_articulos (codigo, descripcion, precio)
+        $query = "INSERT INTO  tb_himnos (codigo, descripcion, autor, tipo)
                                 VALUES (?, ?, ?)";
         try{    
           $link=conexion();    
           $comando = $link->prepare($query);
-          $comando->execute(array($codigo, $descripcion, $precio));
+          $comando->execute(array($codigo, $descripcion, $autor, $tipo));
           $count = $comando->rowCount();
         
           if($count > 0){
@@ -27,7 +27,7 @@ class Mantenimiento{
     
     public static function eliminar_Articulos($codigo){
       include("connection_db.php");
-      $query = "delete from tb_articulos where codigo=?";
+      $query = "delete from tb_himnos where codigo=?";
       try{
           $link=conexion();
           $comando=$link->prepare($query);
@@ -47,10 +47,10 @@ class Mantenimiento{
   
   
   
-  public static function actualizar_Articulos($codigo, $descripcion, $precio){
+  public static function actualizar_Articulos($codigo, $descripcion, $autor, $tipo){
         include("connection_db.php");
-        $query = "UPDATE tb_articulos" .
-            " SET descripcion=?, precio=? " .
+        $query = "UPDATE tb_himnos" .
+            " SET descripcion=?, autor=?, tipo=? " .
             "WHERE codigo=?";
 
         try {    
