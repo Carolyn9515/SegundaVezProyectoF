@@ -26,6 +26,7 @@ public class Config {
     public static final String urlConsultaApiMySQLi = "http://192.168.43.234/conexion/Api.php";                          //Ver todos los registros DB.
     public static final String urlConsultaApiPDO = "http://192.168.43.234/conexion/buscarAll.php";                       //Ver todos los registros DB.
 
+    public static final String urlConsultaAutores = "http://192.168.43.234/conexion/BuscarLetra.php";
     public static final String urlConsultaCodigo = "http://192.168.43.234/conexion/buscarArticulosCodigo.php";            //Busquedas por código.
     public static final String urlConsultaDescripcion = "http://192.168.43.234/conexion/buscarArticulosDescripcion.php";  //Busquedas por descripción.
     public static final String urlConsultaAllArticulos = "http://192.168.43.234/conexion/buscarArticulos.php";            //Devuelve todos los registros de la tabla MySQL.

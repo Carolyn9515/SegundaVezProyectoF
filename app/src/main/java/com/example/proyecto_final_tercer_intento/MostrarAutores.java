@@ -42,7 +42,7 @@ public class MostrarAutores extends AppCompatActivity {
         setContentView(R.layout.activity_mostrar_autores);
 
 
-        public void consultarAutor (final Context context, final String autor){
+        public void consultaDeAutor (final Context context, final String autor){
 
             progressDialog = new ProgressDialog(context);
             progressDialog.setCancelable(false);
@@ -69,22 +69,22 @@ public class MostrarAutores extends AppCompatActivity {
                                 toast.show();
                                 */
                                     JSONArray jsonArray = new JSONArray(response);
-                                    String codigo = jsonArray.getJSONObject(0).getString("codigo");
-                                    String descripcion = jsonArray.getJSONObject(0).getString("descripcion");
+                                    //String codigo = jsonArray.getJSONObject(0).getString("codigo");
+                                    //String descripcion = jsonArray.getJSONObject(0).getString("descripcion");
                                     String autor = jsonArray.getJSONObject(0).getString("autor");
-                                    String tipo = jsonArray.getJSONObject(0).getString("tipo");
+                                    //String tipo = jsonArray.getJSONObject(0).getString("tipo");
 
-                                    datos.setCodigo(Integer.parseInt(codigo));
-                                    datos.setDescripcion(descripcion);
+                                   // datos.setCodigo(Integer.parseInt(codigo));
+                                    //datos.setDescripcion(descripcion);
                                     datos.setAutor(autor);
-                                    datos.setTipo(tipo);
+                                    //datos.setTipo(tipo);
 
                                     Intent intent = new Intent(context, MainActivity.class);
                                     intent.putExtra("senal", "1");
-                                    intent.putExtra("codigo", codigo.toString());
-                                    intent.putExtra("descripcion", descripcion);
+                                   // intent.putExtra("codigo", codigo.toString());
+                                    //intent.putExtra("descripcion", descripcion);
                                     intent.putExtra("autor", autor);
-                                    intent.putExtra("tipo", tipo);
+                                    //intent.putExtra("tipo", tipo);
                                     //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                     context.startActivity(intent);
 
