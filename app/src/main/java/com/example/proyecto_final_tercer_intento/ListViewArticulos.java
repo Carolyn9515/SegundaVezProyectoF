@@ -5,12 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -56,13 +60,13 @@ public class ListViewArticulos extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_view_articulos);
+        setContentView(R.layout.activity_busqueda);
 
         listViewPersonas = (ListView) findViewById(R.id.listViewPersonas);
         searchView = (SearchView) findViewById(R.id.searchView);
 
        adaptador = new ArrayAdapter(this,android.R.layout.simple_list_item_1,
-                conexion.consultaListaArticulos1());
+
         listViewPersonas.setAdapter(adaptador);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -80,23 +84,35 @@ public class ListViewArticulos extends AppCompatActivity {
             }
         });
 
-        listViewPersonas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.mycolore));
+        toolbar.setTitleMargin(0, 0, 0, 0);
+        toolbar.setSubtitle("Consulta de Himnarios");
+        toolbar.setSubtitleTextColor(getResources().getColor(R.color.mycolor1));
+        toolbar.setTitle("...");
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int pos, long l) {
-
-                String informacion = "Código: "+conexion.consultaListaArticulos().get(pos).getCodigo()+"\n";
-                informacion+="Descripción: "+conexion.consultaListaArticulos().get(pos).getDescripcion()+"\n";
-                informacion+="Precio: "+conexion.consultaListaArticulos().get(pos).getPrecio();
-
-                Dto articulos = conexion.consultaListaArticulos().get(pos);
-                Intent intent = new Intent(ListViewArticulos.this,DetalleArticulos.class);
-
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("articulo",articulos);
-                intent.putExtras(bundle);
-                startActivity(intent);
-
+            public void onClick(View v) {
+                DialogConfirmacion();
             }
         });
+
+        ///y esto para pantalla completa (oculta incluso la barra de estado)
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        productosList = new ArrayList<>();
+
+
+
+        //Toast.makeText(this, "Si", Toast.LENGTH_SHORT).show();
+
+        loadProductos();
+
     }
 }
