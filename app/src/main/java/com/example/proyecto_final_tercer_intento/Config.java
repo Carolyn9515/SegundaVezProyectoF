@@ -28,7 +28,7 @@ public class Config {
 
     public static final String urlConsultaAutores = "http://192.168.56.1/conexion/BuscarLetra.php";
     public static final String urlConsultaCodigo = "http://192.168.56.1/conexion/buscarArticulosCodigo.php";            //Busquedas por código.
-    public static final String urlConsultaDescripcion = "http://192.168.56.1/conexion/buscarArticulosDescripcion.php";  //Busquedas por descripción.
+    public static final String urlConsultaDescripcion = "http://localhost/conexion/buscarArticulosDescripcion.php";  //Busquedas por descripción.
     public static final String urlConsultaAllArticulos = "http://192.168.56.1/conexion/buscarArticulos.php";            //Devuelve todos los registros de la tabla MySQL.
     public static final String urlbuscarhimnario = "http://192.168.56.1/conexion/buscarhimnario.php";
 

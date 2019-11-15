@@ -20,7 +20,7 @@
 	//$conn=conexion();  
 	
 	//creating a query
-	$stmt = $conn->prepare("SELECT autor FROM tb_himnos WHERE autor LIKE "B*";");
+	$stmt = $conn->prepare("SELECT autor FROM tb_himnos WHERE autor = ?;");
 	
 	//executing the query 
 	$stmt->execute();
