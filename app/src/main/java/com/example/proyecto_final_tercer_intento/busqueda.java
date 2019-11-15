@@ -67,15 +67,15 @@ public class busqueda {
                                 */
                                     JSONArray jsonArray = new JSONArray(response);
 
-                                    String nombre = jsonArray.getJSONObject(0).getString("nombre");
+                                    String nombre = jsonArray.getJSONObject(0).getString("autor");
 
 
 
-                                    datos.setNombre(nombre);
+                                    datos.setAutor(nombre);
 
                                     Intent intent = new Intent(context, MainActivity.class);
 
-                                    intent.putExtra("nombre", nombre);
+                                    intent.putExtra("autor", nombre);
 
                                     //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                     context.startActivity(intent);
