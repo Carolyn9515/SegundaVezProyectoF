@@ -418,7 +418,7 @@ public class MantenimientoMySQL {
        // progressDialog.setMessage("Espere por favor, Estamos trabajando en su petición en el servidor");
         progressDialog.show();
 
-        String url  = Config.urlbuscarhimnario;
+        String url  = Config.urlConsultaDescripcion;
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 url,
