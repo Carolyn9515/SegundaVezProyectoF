@@ -553,7 +553,7 @@ public class MantenimientoMySQL {
     }
 
 
-    //public void modificar(final Context context, final String codigo, final String descripcion, final String precio){
+    //public void modificar(final Context context, final String codigo, final String descripcion, final String autor, final String tipo){
     public void modificar(final Context context, final Dto datos){
 
         progressDialog = new ProgressDialog(context);

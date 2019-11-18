@@ -312,6 +312,7 @@ public class MainActivity extends AppCompatActivity {
         et_descripcion.setText(null);
         et_autor.setText(null);
         et_tipo.setText(null);
+
     }
 
 
@@ -336,6 +337,7 @@ public class MainActivity extends AppCompatActivity {
             et_codigo.setText(null);
             et_descripcion.setText(null);
             et_autor.setText(null);
+            et_tipo.setText(null);
             return true;
         }else if(id == R.id.action_listaArticulos){
             Intent spinnerActivity = new Intent(MainActivity.this, Consulta_RecyclerView.class);
