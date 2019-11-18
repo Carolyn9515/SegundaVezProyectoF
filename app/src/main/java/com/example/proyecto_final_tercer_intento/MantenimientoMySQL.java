@@ -64,8 +64,8 @@ public class MantenimientoMySQL {
     ProductsAdapter adapter;
 
     public void guardar(final Context context, final String codigo, final String descripcion, final String autor, final String tipo){
-        //String url = Config.urlGuardar;
         String url = Config.urlGuardar;
+        //String url = Config.urlGuardar;
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
